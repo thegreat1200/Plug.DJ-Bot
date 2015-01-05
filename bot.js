@@ -30,3 +30,4 @@ sa = true;
 }, 5000);
 var room = $("#room-name").find(".bar-value").text();
 console.log("["+room+"Bot] Is now Online!");
+API.sendChat("["+room+"Bot] is now Running!");
