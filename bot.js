@@ -27,9 +27,6 @@ sa = false;
 if (time > 23) {
 sa = true;
 }
-if (API.USER_JOIN) {
-  API.sendChat("/me User has joined!");
-}
 }, 5000);
 var room = $("#room-name").find(".bar-value").text();
 console.log("["+room+"Bot] Is now Online!");
