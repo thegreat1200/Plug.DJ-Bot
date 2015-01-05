@@ -1,6 +1,6 @@
+var sa = true;
 window.setInterval(function(){
 var time = API.getTimeRemaining();
-var sa = true;
 if (time < 20 && sa == true) {
 if (!API.getDJ().username) {
 online = API.getAudience().length;
