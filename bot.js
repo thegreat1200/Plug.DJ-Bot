@@ -28,11 +28,13 @@ if (time > 23) {
 sa = true;
 }
 
-API.on(API.USER_JOIN, listener);
-
-function listener() {
-  API.sendChat("User, " + API.USER_JOIN + " Joined!");
+API.on(API.CHAT, function(data){
+if(data.type === "message" && data.message === "!commands"){
+API.moderateDeleteChat(data.cid);
+API.sendChat(data.un+" sent the !commands command!");
 }
+});
+
 }, 5000);
 var room = $("#room-name").find(".bar-value").text();
 console.log("["+room+"Bot] Is now Online!");
