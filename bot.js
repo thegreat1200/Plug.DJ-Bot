@@ -30,11 +30,9 @@ sa = true;
 var chatMessages = [];
 
 API.on(API.CHAT, function(data){
-if(data.type === "message"){
 chatMessages.push(data.un);
 chatMessages.push(data.message);
 API.moderateDeleteChat(data.cid);
-}
 });
 API.sendChat(chatMessages);
 console.log(chatMessages);
