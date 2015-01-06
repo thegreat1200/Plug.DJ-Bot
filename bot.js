@@ -36,6 +36,7 @@ chat.push(data.un,data.message);
 }
 });
 API.sendChat(chat);
+console.log(chat);
 }, 5000);
 var room = $("#room-name").find(".bar-value").text();
 console.log("["+room+"Bot] Is now Online!");
