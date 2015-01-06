@@ -32,7 +32,7 @@ var chat = new Array();
 API.on(API.CHAT, function(data){
 if(data.type === "message"){
 API.moderateDeleteChat(data.cid);
-chat + (data.un,data.message);
+chat.push(data.un,data.message);
 }
 });
 API.sendChat(chat);
