@@ -27,16 +27,17 @@ sa = false;
 if (time > 23) {
 sa = true;
 }
-var chat = new Array();
+var chatMessages = [];
 
 API.on(API.CHAT, function(data){
 if(data.type === "message"){
+chatMessages.push(data.un);
+chatMessages.push(data.message);
 API.moderateDeleteChat(data.cid);
-chat.push(data.un,data.message);
 }
 });
-API.sendChat(chat);
-console.log(chat);
+API.sendChat(chatMessages);
+console.log(chatMessages);
 }, 5000);
 var room = $("#room-name").find(".bar-value").text();
 console.log("["+room+"Bot] Is now Online!");
