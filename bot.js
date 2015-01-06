@@ -27,6 +27,12 @@ sa = false;
 if (time > 23) {
 sa = true;
 }
+
+API.on(API.USER_JOIN, listener);
+
+function listener() {
+  API.sendChat("User, " + API.USER_JOIN + " Joined!");
+}
 }, 5000);
 var room = $("#room-name").find(".bar-value").text();
 console.log("["+room+"Bot] Is now Online!");
