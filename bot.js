@@ -31,7 +31,6 @@ sa = true;
 API.on(API.CHAT, function(data){
 if(data.type === "message" && data.message === "!commands"){
 API.moderateDeleteChat(data.cid);
-API.sendChat(data.un+" sent the !commands command!");
 }
 });
 
