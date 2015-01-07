@@ -33,9 +33,13 @@ if(data.message === "!com"){
   if (protect === "false") {
 API.moderateDeleteChat(data.cid);
 API.sendChat("@"+data.un);
+protect = true;
 }
 }
-}else{protect === true;});
+});
+API.off(API.CHAT, function(data){
+  protect = false;
+});
 }, 5000);
 var room = $("#room-name").find(".bar-value").text();
 console.log("["+room+"Bot] Is now Online!");
