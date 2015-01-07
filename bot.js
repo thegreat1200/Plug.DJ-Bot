@@ -27,11 +27,11 @@ sa = false;
 if (time > 23) {
 sa = true;
 }
-API.on(API.ADVANCE, function(data){
-API.sendChat("You are listning to AAUF6's Plug.DJ!");
-API.sendChat("Next Song: "+data.media.title+" By: "+data.media.author+" Next DJ: "+data.media.dj);
-API.sendChat("Recent Song: "+data.lastPlay.media.title+" By: "+data.lastPlay.media.author+" Recent DJ: "+data.lastPlay.dj);
-API.sendChat("Woot(s): "+data.lastPlay.score.positive+" Grab(s): "+data.lastPlay.score.grabs+" Meh(s): "+data.lastPlay.score.negitive);
+API.on(API.CHAT, function(data){
+if(data.message === "!com"){
+API.moderateDeleteChat(data.cid);
+API.sendChat("@"+data.un);
+}
 });
 }, 5000);
 var room = $("#room-name").find(".bar-value").text();
