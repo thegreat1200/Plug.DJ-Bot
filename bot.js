@@ -27,12 +27,15 @@ sa = false;
 if (time > 23) {
 sa = true;
 }
+var protect = false;
 API.on(API.CHAT, function(data){
 if(data.message === "!com"){
+  if (protect === "false") {
 API.moderateDeleteChat(data.cid);
 API.sendChat("@"+data.un);
 }
-});
+}
+}else{protect === true;});
 }, 5000);
 var room = $("#room-name").find(".bar-value").text();
 console.log("["+room+"Bot] Is now Online!");
