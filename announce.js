@@ -1,1 +1,1 @@
-API.sendChat("");
+window.setInterval(function(){
