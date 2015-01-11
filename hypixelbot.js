@@ -14,7 +14,8 @@ API.sendChat("/me ["+data.un+"] [!playnext] "+data.un+" is playing next.");
 }*/
 
 if (msg.indexOf("!promote") == 0 && role >=5) {
-   var user = msg.substring(msg.length + 2);
+   /*var user = msg.substring(msg.length + 2);*/
+   var user = msg.replace("!promote ", "");
    API.sendChat(user);
 }
 });
