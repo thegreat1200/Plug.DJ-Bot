@@ -14,12 +14,8 @@ API.sendChat("/me ["+data.un+"] [!playnext] "+data.un+" is playing next.");
 }*/
 
 if (msg.indexOf("!promote") == 0 && role >=5) {
-  if (msg.indexOf("!promote @")) {
-    var user = msg.substring(msg.length + 2);
-    API.sendChat("User "+user+" has been promoted!");
-  } else {
-    API.sendChat("["+data.un+"] You need to specify a user!");
-  }
+   var user = msg.substring(msg.length + 2);
+   API.sendChat(user);
 }
 });
 /*
