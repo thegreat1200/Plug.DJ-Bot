@@ -16,7 +16,12 @@ API.sendChat("/me ["+data.un+"] [!playnext] "+data.un+" is playing next.");
 if (msg.indexOf("!promote") == 0 && role >=5) {
    /*var user = msg.substring(msg.length + 2);*/
    var user = msg.replace("!promote ", "");
-   API.sendChat(user);
+   var rank = msg.replace("!promote "+user+" ", "");
+   API.sendChat("/me ["+data.un+"] ["+data.message+"] Promoted "+data.un+" to "+rank);
+   API.moderateDeleteChat(data.cid);
+} else if (msg.indexOf("!") == 0) {
+ API.sendChat("/me ["+data.un+"] ["+data.message+"] Sorry, you eather have no permission or that command does not exist.");
+ API.moderateDeleteChat(data.cid);
 }
 });
 /*
