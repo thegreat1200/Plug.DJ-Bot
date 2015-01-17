@@ -1,4 +1,4 @@
-(function () {
+window.setInterval(function(){
        
         function activate() {
                 API.on(API.CHAT, chatListener);
@@ -22,6 +22,7 @@
                                 //API.sendChat("Command does not exist!");
                 }
         }
+        }
        
         var bot = {
                 startup: function() {
@@ -29,4 +30,7 @@
                 }
         }
        
-}).call(this);
+}, 5000);
+var room = $("#room-name").find(".bar-value").text();
+console.log("[HypixelBot] is online! V. Beta");
+API.sendChat("/me [HypixelBot] is online! V. Beta");
